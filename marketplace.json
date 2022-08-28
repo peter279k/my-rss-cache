@@ -1,0 +1,30 @@
+{
+  "app_name": "My RSS CAche",
+  "description": "Using the Python and Flask to build a own RSS Cache App",
+  "type": "Building RSS Cache App",
+  "contributed_by": "Peter Li",
+  "repo_url": "https://github.com/peter279k/my-rss-cache",
+  "preview_image_url": "https://camo.githubusercontent.com/257ce5c3b09ae3fa70f0bce7cbb26a98d31291e0707e8482b740337a9ec32e3e/68747470733a2f2f692e696d6775722e636f6d2f637a3133555a392e706e67",
+  "download_url": "https://github.com/peter279k/my-rss-cache/archive/master.zip",
+  "hosted_url": "",
+  "quick_deploy": "true",
+  "deploy_buttons": [
+    {
+      "heroku": "https://heroku.com/deploy?template=https://github.com/peter279k/my-rss-cache"
+    }
+  ],
+  "language": ["Python"],
+  "redis_commands": [
+    "GET",
+    "SET"
+  ],
+  "redis_features": [],
+  "redis_modules": [],
+  "app_image_urls": [
+    "https://camo.githubusercontent.com/257ce5c3b09ae3fa70f0bce7cbb26a98d31291e0707e8482b740337a9ec32e3e/68747470733a2f2f692e696d6775722e636f6d2f637a3133555a392e706e67"
+  ],
+  "youtube_url": "",
+  "special_tags": [],
+  "verticals": ["Others"],
+  "markdown": "https://github.com/peter279k/my-rss-cache/blob/master/README.md"
+}
