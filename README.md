@@ -43,6 +43,11 @@ expired = redis_conn.get('lic_nttu_rss_expired')
 - Running the `pip install -r requirements.txt` command.
 - Running the `flask run` to run the RSS Cache App in the development mode.
 
+### Available source RSS feed urls
+
+- [LIC NTTU](https://lic.nttu.edu.tw/search.getService.asp?serviceName=GIP.xdrss&mp=1&ctNodeId=755)
+- Coming soon!
+
 ## Deployment
 
 To make deploys work, you need to create free account on [Redis Cloud](https://redis.info/try-free-dev-to)
