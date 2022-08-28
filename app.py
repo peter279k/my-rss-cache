@@ -25,10 +25,12 @@ def lic_nttu():
         diff_expired = None
     if redis_conn.get('lic_nttu_rss') is None or diff_expired > 120:
         response = requests.get(lib_rss_url)
-        redis_conn.set('lic_nttu_rss', response.text.replace('\r', ''))
+        rss_feed = response.text.replace('\r', '')
+        redis_conn.set('lic_nttu_rss', rss_feed)
         redis_conn.set('lic_nttu_rss_expired', now_timestamp)
         status_code = 200
-
-    rss_contents = redis_conn.get('lic_nttu_rss')
+        rss_contents = rss_feed
+    else:
+        rss_contents = redis_conn.get('lic_nttu_rss')
 
     return Response(rss_contents, status=status_code, mimetype='text/xml')

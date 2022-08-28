@@ -1,0 +1,7 @@
+{
+  "name": "My RSS Cache",
+  "description": "The RSS Caching application with Redis cloud",
+  "repository": "https://github.com/peter279k/my-rss-cache",
+  "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Feed-icon.svg/1200px-Feed-icon.svg.png",
+  "keywords": ["python", "cache", "rss"]
+}
