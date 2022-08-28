@@ -2,11 +2,11 @@
 
 Sometitmes the RSS feed caching is not implemented, customizing the RSS cache for my favorite RSS feed.
 
-[My RSS Cache Version](https://i.imgur.com/cz13UZ9.png)
-[My RSS Cache for lic_nttu](https://i.imgur.com/513JoLL.png)
+<img src="https://i.imgur.com/cz13UZ9.png" width="100%" height="auto">
+
+<img src="https://i.imgur.com/513JoLL.png" width="100%" height="auto">
 
 ## How it works
-
 
 
 ### How the data is stored:
@@ -49,5 +49,5 @@ To make deploys work, you need to create free account on [Redis Cloud](https://r
 
 ### Heroku
 
-[Insert Deploy on Heroku button](https://heroku.com/deploy?template=https://github.com/peter279k/my-rss-cache)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/peter279k/my-rss-cache)
 
