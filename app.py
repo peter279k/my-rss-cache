@@ -25,12 +25,13 @@ def lib_ntu():
 
     if response.status_code == 200:
         redis_conn.set('lib_ntu_expired', response.headers['Last-Modified'])
-        redis_conn.set('lib_ntu_rss', response.text)
+        response.encoding = 'cp-1252'
         rss_contents = response.text
+        redis_conn.set('lib_ntu_rss', response.text)
     else:
         rss_contents = redis_conn.get('lib_ntu_rss')
 
-    return Response(rss_contents, status=status_code, mimetype='text/xml')
+    return Response(rss_contents, status=200, mimetype='text/xml')
 
 @app.route("/lic_nttu")
 def lic_nttu():
@@ -39,7 +40,6 @@ def lic_nttu():
     redis_conn = get_redis_connection()
     expired = redis_conn.get('lic_nttu_rss_expired')
     now_timestamp = datetime.datetime.now().timestamp()
-    status_code = 304
     if expired is not None:
         diff_expired = now_timestamp - float(expired.decode('utf-8'))
     else:
@@ -49,9 +49,8 @@ def lic_nttu():
         rss_feed = response.text.replace('\r', '')
         redis_conn.set('lic_nttu_rss', rss_feed)
         redis_conn.set('lic_nttu_rss_expired', now_timestamp)
-        status_code = 200
         rss_contents = rss_feed
     else:
         rss_contents = redis_conn.get('lic_nttu_rss')
 
-    return Response(rss_contents, status=status_code, mimetype='text/xml')
+    return Response(rss_contents, status=200, mimetype='text/xml')
