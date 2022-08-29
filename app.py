@@ -11,6 +11,27 @@ app = Flask(__name__)
 def index():
     return "My RSS Cache v0.1"
 
+@app.route("/lib_ntu")
+def lib_ntu():
+    lib_ntu_url = 'https://www.lib.ntu.edu.tw/rss/newsrss.xml'
+    rss_contents = ''
+    redis_conn = get_redis_connection()
+    expired = redis_conn.get('lib_ntu_expired')
+    headers = {}
+    if expired is not None:
+        headers['If-Modified-Since'] = expired
+
+    response = requests.get(lib_ntu_url, headers=headers)
+
+    if response.status_code == 200:
+        redis_conn.set('lib_ntu_expired', response.headers['Last-Modified'])
+        redis_conn.set('lib_ntu_rss', response.text)
+        rss_contents = response.text
+    else:
+        rss_contents = redis_conn.get('lib_ntu_rss')
+
+    return Response(rss_contents, status=status_code, mimetype='text/xml')
+
 @app.route("/lic_nttu")
 def lic_nttu():
     lib_rss_url = 'https://lic.nttu.edu.tw/search.getService.asp?serviceName=GIP.xdrss&mp=1&ctNodeId=755'
