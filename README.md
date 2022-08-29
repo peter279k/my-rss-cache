@@ -46,7 +46,9 @@ expired = redis_conn.get('lic_nttu_rss_expired')
 ## Available source RSS feed urls
 
 - [LIC NTTU](https://lic.nttu.edu.tw/search.getService.asp?serviceName=GIP.xdrss&mp=1&ctNodeId=755)
+    - https://my-rss-cache.herokuapp.com/lic_nttu
 - [LIB NTU](https://www.lib.ntu.edu.tw/rss/newsrss.xml)
+    - https://my-rss-cache.herokuapp.com/lib_ntu
 - Coming soon!
 
 ## Deployment
